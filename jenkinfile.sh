@@ -10,7 +10,7 @@ pipeline{
     
           stage('Code Stability'){
             steps {
-                sh ' cd /var/lib/jenkins/workspace/pipeline_git/spring3hibernate; mvn compile'
+                sh 'cd /var/lib/jenkins/workspace/pipeline_git/spring3hibernate; mvn compile'
                 
             }
     }
