@@ -14,6 +14,21 @@ pipeline{
                 
             }
     }
+
+  stage('Code Quality'){
+            steps {
+                sh 'cd /var/lib/jenkins/workspace/pipeline_git/spring3hibernate; mvn checkstyle:checkstyle'
+
+            }
+    }
+
+ stage('Code Coverage'){
+            steps {
+                sh 'cd /var/lib/jenkins/workspace/pipeline_git/spring3hibernate; mvn coberture:corberture'
+
+            }
+    }
+
     }
 }
 
