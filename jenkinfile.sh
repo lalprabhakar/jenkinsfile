@@ -15,6 +15,15 @@ pipeline{
             }
     }
 
+  stage('User Input'){
+            steps {
+                input message: '', submitter: 'Submitter'
+
+            }
+    }
+
+
+
   stage('Code Quality'){
             steps {
                 sh 'cd /var/lib/jenkins/workspace/pipeline_git/spring3hibernate; mvn checkstyle:checkstyle'
