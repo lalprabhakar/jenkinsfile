@@ -24,7 +24,7 @@ pipeline{
 
  stage('Code Coverage'){
             steps {
-                sh 'cd /var/lib/jenkins/workspace/pipeline_git/spring3hibernate; mvn cobertura:corbertura'
+                sh 'cd /var/lib/jenkins/workspace/pipeline_git/spring3hibernate; mvn cobertura:cobertura'
 
             }
     }
