@@ -3,14 +3,14 @@ pipeline{
     stages{
         stage('Git Clone'){
             steps {
-                sh 'rm -rf pipeline_git*; git clone git@github.com:opstree/spring3hibernate.git'
+                sh 'rm -rf spring3hibernate; git clone git@github.com:opstree/spring3hibernate.git'
             }
          }
         
     
           stage('Code Stability'){
             steps {
-                sh ' cd spring3hibernate; mvn compile'
+                sh ' cd /var/lib/jenkins/workspace/pipeline_job/spring3hibernate; mvn compile'
                 
             }
     }
