@@ -5,6 +5,7 @@ pipeline{
             steps {
                    sh 'git clone git@github.com:opstree/spring3hibernate.git'
                    sh 'cd spring3hibernate'
+                   sh 'pwd'
                    sh 'mvn install'
             }
 
