@@ -33,9 +33,24 @@ pipeline{
             }
 
          }
+        stage('Code Quality'){
+            steps {
+                   sh 'cd spring3hibernate; mvn checkstyle:checkstyle'
+            }
+
+         }
+       stage('Code Coverage'){
+            steps {
+                sh 'cd spring3hibernate; mvn cobertura:cobertura'
+
+            }
+    }
+
+
 
     
 
     }
 }
+            
 
