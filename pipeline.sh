@@ -3,8 +3,8 @@ pipeline{
     stages{
         stage('Clone of Git'){
             steps {
-                   sh 'rm -rf pipelinework;git clone git@github.com:opstree/spring3hibernate.git'
-                   sh 'cd spring3hibernate'
+                   sh 'rm -rf /var/lib/jenkins/workspace/pipelinework*;git clone git@github.com:opstree/spring3hibernate.git'
+                   sh 'cd pipelinework/spring3hibernate'
                    sh 'mvn install'
             }
 
