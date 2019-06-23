@@ -1,13 +1,11 @@
 pipeline{
     agent any
     stages{
-        stage('Installation of Dependency'){
+        stage('Clone of Git'){
             steps {
-                sh 'yum install maven -y'
-                sh 'wget http://www-us.apache.org/dist/tomcat/tomcat-9/v9.0.14/bin/apache-tomcat-9.0.14.tar.gz'
-                sh 'tar -xvf apache-tomcat-9.0.14.tar.gz'
-                sh 'mv apache-tomcat-9.0.14 tomcat9'
+                   sh 'rm -rf pipelinework;git clone git@github.com:opstree/spring3hibernate.git'
             }
+
          }
         
     
