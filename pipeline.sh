@@ -15,6 +15,12 @@ pipeline{
             }
 
          }
+         stage('Slack Notification'){
+            steps {
+                  slackSend channel: 'ot-ninja-bach5', color: 'Green', iconEmoji: '', message: 'Going to start build', teamDomain: 'opstree', tokenCredentialId: 'slack', username: ''
+            }
+
+         }
 
     
 
