@@ -4,7 +4,6 @@ pipeline{
         stage('Clone of Git'){
             steps {
                    sh 'rm -rf spring3hibernate;git clone git@github.com:opstree/spring3hibernate.git'
-                   sh 'cd spring3hibernate; mvn install'
             }
 
          }
@@ -25,6 +24,12 @@ pipeline{
          stage('Input Process'){
             steps {
                 input message: 'Only for admin User', submitter: 'proceed'
+            }
+
+         }
+        stage('Code Stability'){
+            steps {
+                   sh 'cd spring3hibernate; mvn compile'
             }
 
          }
